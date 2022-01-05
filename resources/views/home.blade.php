@@ -16,6 +16,7 @@
                                 <button type="submit" class="btn btn-danger" style="width: 90%; margin:10px">
                                         {{ __('Update Product') }}
                                 </button>
+                                <h2>Testing</h2>
                                 </a><br>
                             @endif
                             
