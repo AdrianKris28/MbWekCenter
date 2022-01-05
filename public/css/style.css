@@ -1,0 +1,36 @@
+nav {
+    background-color: #6cb2eb;
+}
+
+nav a {
+    color: white;
+}
+
+footer {
+    background-color: #6cb2eb;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+footer p {
+    margin: 0;
+    color: white;
+    padding: 10px 0 10px 0;
+}
+
+#navbarSupportedContent {
+    display: flex;
+    margin-left: 600px;
+}
+
+#userTable {
+    max-width: 1084px;
+    margin: auto;
+    border: 1px solid #dee2e6;
+    font-size: 18px;
+}
+
+#userTable tbody {
+    background-color: #e6e6e6;
+}
