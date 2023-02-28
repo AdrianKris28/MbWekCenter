@@ -21,28 +21,33 @@
             <h5>Price :</h5>
             <p>Rp. {{$dt->price}},-</p>
 
+        @if(Auth::check())
+
             @if ( Auth::user()->name != 'Admin' )
             <br>
                 <h5>Add To Cart</h5>
                 <div class="quantity" style="display: flex">
                     <p>Quantity :</p>
-                    <form action="route{{ 'home' }}" method="POST" style="margin-left: 15px">
+                    <form action="/addToCart" method="POST" style="margin-left: 15px">
                         @csrf
-                        <input type="number" name="quantity" id="quantity" style="border: solid 1px rgb(124, 124, 124); width:422px">
-                         <br>
+                        <input type="number" name="quantity" id="quantity" style="border: solid 1px rgb(124, 124, 124); width:422px" class="form-control @error('quantity') is-invalid @enderror">
+                          @error('quantity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror 
+                        <br>
+                        <input type="hidden" name="stock" value="{{$dt->stock}}">
                         <input type="hidden" name="productId" value="{{$dt->id}}">
                         
-                        <a href="/addToCart">
                             <button type="submit" class="btn btn-primary" style="margin-top: 20px; width:200px">
                                         {{ __('Submit') }}
                             </button>
-                        </a>
                     </form>
                 </div>
-
-
-
             @endif
+            
+        @endif
 
         </div>
 

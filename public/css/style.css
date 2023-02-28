@@ -1,6 +1,6 @@
-nav {
+/* nav {
     background-color: #6cb2eb;
-}
+} */
 
 nav a {
     color: white;
@@ -9,7 +9,7 @@ nav a {
 footer {
     background-color: #6cb2eb;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     bottom: 0;
 }
@@ -33,4 +33,11 @@ footer p {
 
 #userTable tbody {
     background-color: #e6e6e6;
+}
+
+ul.pagination {
+    background-color: white;
+    margin-bottom: 50px;
+    width: 200px;
+    margin: auto;
 }

@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md bg-blue shadow-sm">
+        <nav class="navbar navbar-expand-md bg-blue shadow-sm" style="background-color: #6cb2eb">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('login') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -42,7 +42,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Search Product') }}</a>
+                                    <a class="nav-link" href="{{ route('searchProduct')}}">{{ __('Search Product') }}</a>
                                 </li>
                     
                     </ul>

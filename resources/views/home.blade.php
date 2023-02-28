@@ -10,16 +10,15 @@
                     <img src="{{ Storage::url($pd->image) }}" alt="No Image" width="300px" height="200px"><br>
                         <h5 style="padding:0; margin:10px"> {{$pd->title}} </h5>
                         <p style="padding:0; margin:10px">{{$pd->description}}</p> 
-                        {{-- @if (Route::has('login')) --}}
-                            @if ( Auth::user()->name == 'Admin' )
-                                <a href="/updateProduct/{{$pd->id}}">
-                                <button type="submit" class="btn btn-danger" style="width: 90%; margin:10px">
-                                        {{ __('Update Product') }}
-                                </button>
-                                </a><br>
+                            @if (Auth::check())
+                                @if ( Auth::user()->name == 'Admin' )
+                                    <a href="/updateProduct/{{$pd->id}}">
+                                    <button type="submit" class="btn btn-danger" style="width: 90%; margin:10px">
+                                            {{ __('Update Product') }}
+                                    </button>
+                                    </a><br>
+                                @endif  
                             @endif
-                            
-                        {{-- @endif --}}
 
                             <a href="/productDetail/{{$pd->id}}">
                                 <button type="submit" class="btn btn-primary" style="width: 90%; margin:10px">

@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class RedirectIfAuthenticated
 {
@@ -25,6 +26,11 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+        }
+
+        if ($request->remember) {
+            Cookie::queue('email', $request->email, 120);
+            Cookie::queue('password', $request->password, 120);
         }
 
         return $next($request);
